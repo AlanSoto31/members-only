@@ -1,0 +1,24 @@
+class PostsController < ApplicationController
+
+  before_action :authenticate_user!, only: %i[new create]
+
+  def index
+    @posts = Post.all
+  end
+  
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(params[:post])
+    if @post.save
+      #flash[:success] = "post successfully created"
+      redirect_to new_post_session
+    else
+      #flash[:error] = "Something went wrong"
+      render 'new'
+    end
+  end
+  
+end
