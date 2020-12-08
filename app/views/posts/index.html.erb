@@ -1,0 +1,17 @@
+<tbody>
+  <section class="section">
+      <div class="columns">
+        <ul id="posts">
+          <% @posts.each do |posts| %>
+            <li>
+              <%= posts.title %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+  </section>
+</tbody>
+
+<br>
+
+<%= link_to 'New Post', new_post_url %>

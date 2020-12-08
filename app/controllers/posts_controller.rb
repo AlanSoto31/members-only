@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   include PostsHelper
 
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[index new create]
 
   def index
     @posts = Post.all
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       #flash[:success] = "post successfully created"
-      redirect_to new_post_url
+      redirect_to posts_url
     else
       #flash[:error] = "Something went wrong"
       render 'new'
