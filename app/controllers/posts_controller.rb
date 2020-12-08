@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include PostsHelper
 
   before_action :authenticate_user!, only: %i[new create]
 
@@ -11,10 +12,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     if @post.save
       #flash[:success] = "post successfully created"
-      redirect_to new_post_session
+      redirect_to new_post_url
     else
       #flash[:error] = "Something went wrong"
       render 'new'

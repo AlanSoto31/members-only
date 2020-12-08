@@ -1,0 +1,5 @@
+<%= form_for @post, url: {action: "create"} do |f| %>
+  Title: <%= f.text_field :title, placeholder: "Title" %><br />
+  Body: <%= f.text_field :body, placeholder: "Body" %><br />
+  <%= f.submit "Create" %>
+<% end %>
