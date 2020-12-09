@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.current_user
+
     if @post.save
       #flash[:success] = "post successfully created"
       redirect_to posts_url

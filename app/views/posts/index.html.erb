@@ -1,10 +1,14 @@
+
 <tbody>
   <section class="section">
       <div class="columns">
         <ul id="posts">
           <% @posts.each do |posts| %>
             <li>
-              <%= posts.title %>
+              <span><%= posts.title %></span>
+              <span><%= posts.body %></span>
+              
+              <span><%= posts.user.email %></span>
             </li>
           <% end %>
         </ul>
@@ -15,3 +19,4 @@
 <br>
 
 <%= link_to 'New Post', new_post_url %>
+<%= link_to 'Sign Out', destroy_user_session_path, method: "Delete" %>
