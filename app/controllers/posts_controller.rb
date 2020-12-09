@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   include PostsHelper
 
   before_action :authenticate_user!, only: %i[new create]
-  
+
   def index
     @posts = Post.all
   end
-  
+
   def new
     @post = Post.new
   end
@@ -16,12 +18,11 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      #flash[:success] = "post successfully created"
+      # flash[:success] = "post successfully created"
       redirect_to posts_url
     else
-      #flash[:error] = "Something went wrong"
+      # flash[:error] = "Something went wrong"
       render 'new'
     end
   end
-  
 end
