@@ -7,10 +7,11 @@
             <li>
               <span><%= posts.title %></span>
               <span><%= posts.body %></span>
-              
-              <span><%= posts.user.email %></span>
+              <%if user_signed_in?%>
+                <span><%= posts.user.name%></span>
+              <%end%>
             </li>
-          <% end %>
+          <% end%>
         </ul>
       </div>
   </section>
