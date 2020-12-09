@@ -1,7 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table>
+<thead>
+  <th>Title</th>
+  <th>Body</th>
+  <%if user_signed_in?%>
+    <th>Author</th>
+  <%end%>
+</thead>
 
 <tbody>
   <section class="section">
       <div class="columns">
+      
         <ul id="posts">
           <% @posts.each do |posts| %>
             <li>
@@ -16,8 +29,15 @@
       </div>
   </section>
 </tbody>
+</table>
 
 <br>
 
+<% unless user_signed_in? %>
+<%= link_to 'Sign Up', new_user_session_path %>
+<%= link_to 'Log in', user_session_path %>
+<%end%>
 <%= link_to 'New Post', new_post_url %>
+<% if user_signed_in? %>
 <%= link_to 'Sign Out', destroy_user_session_path, method: "Delete" %>
+<%end%>

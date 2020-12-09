@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   include PostsHelper
 
   before_action :authenticate_user!, only: %i[new create]
-
+  
   def index
     @posts = Post.all
   end
