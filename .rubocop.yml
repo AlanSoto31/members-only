@@ -1,7 +1,11 @@
-AllCops:
+AllCops:  
   Exclude:
-    - "Guardfile"
-    - "Rakefile"
+    - "db/**/*"
+    - "bin/*"
+    - "config/**/*"    
+    - "Guardfile"   
+    - "Rakefile"   
+    - "node_modules/**/*" 
 
   DisplayCopNames: true
 
