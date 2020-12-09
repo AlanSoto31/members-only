@@ -30,7 +30,7 @@
 Members-only club is an exclusive clubhouse where members can write embarrassing posts about non-members. Signed-in members can see who the author of a post is. Otherwise, they can only see the post and wonder who wrote it.<br>
 
 
-![screenshot](app/assest/images/screenshot.png)
+![screenshot](/screenshot.png)
 
 <hr>
 
