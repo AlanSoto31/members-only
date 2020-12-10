@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if flash[:notice] %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <h1 class="mt-4 text-center">Post table</h1>
 <table class="table" >
