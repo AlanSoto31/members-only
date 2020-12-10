@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1 class="mt-4 text-center">Post table</h1>
+<h1 class="mt-5 p-5 text-center">Post table</h1>
 <table class="table" >
   <thead class="table-info">
     <tr>
@@ -27,12 +27,8 @@
 </table>
 
 <br>
-
-<% unless user_signed_in? %>
-<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
-<%= link_to 'Log in', user_session_path, class: "btn btn-primary"%>
-<%end%>
 <%= link_to 'New Post', new_post_url, class: "btn btn-primary" %>
-<% if user_signed_in? %>
-<%= link_to 'Sign Out', destroy_user_session_path, method: "Delete", class: "btn btn-primary" %>
-<%end%>
+<% unless user_signed_in? %>
+  <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
+ <%end%>
+
