@@ -25,7 +25,7 @@
 <br>
 
 <% unless user_signed_in? %>
-<%= link_to 'Sign Up', new_user_session_path, class: "btn btn-primary" %>
+<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
 <%= link_to 'Log in', user_session_path, class: "btn btn-primary"%>
 <%end%>
 <%= link_to 'New Post', new_post_url, class: "btn btn-primary" %>
