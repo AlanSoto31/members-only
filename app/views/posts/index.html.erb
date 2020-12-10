@@ -1,12 +1,11 @@
 <h1 class="mt-2 p-4 text-center">Post table</h1>
+<%user_si%>
 <table class="table" >
   <thead class="table-info">
     <tr>
       <th>Title</th>
       <th>Body</th>
-        <%if user_signed_in?%>
-         <th>Author</th>
-        <%end%>
+      <th><%=@author%></th>
     </tr>
   </thead>
   <tbody>
@@ -14,17 +13,12 @@
       <tr>
         <td><%= posts.title %></td>
         <td><%= posts.body %></td>
-        <%if user_signed_in?%>
-          <td><%= posts.user.name%></td>
-        <%end%>
+        <td><%= @post_name%></td>
       </tr>
     <% end%>
   </tbody>
 </table>
-
 <br>
 <%= link_to 'New Post', new_post_url, class: "btn btn-primary" %>
-<% unless user_signed_in? %>
-  <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
- <%end%>
+<%= @su_button %>
 

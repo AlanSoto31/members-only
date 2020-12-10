@@ -17,24 +17,14 @@
 
   </head>
   <body>
+    <%u_signin%>
     <nav class="navbar fixed-top navbar-dark bg-primary p-2">
-      <% unless user_signed_in? %>
-        <%= link_to 'Sign in', user_session_path, class: "btn btn-info"%>
-      <%end%>
-      <% if user_signed_in? %>
-        <%= link_to 'Sign Out', destroy_user_session_path, method: "Delete", class: "btn btn-info" %>
-      <%end%>
+      <%= @si_button %>
+      <%= @so_button %>
     </nav>
     <br>
     <br>
     <br>
-
-    <% if notice %>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <p><%= flash.notice %></p>
-      </div>
-    <%end%>
-   
     <div class= "container">
       <%= yield %>
     </div>
