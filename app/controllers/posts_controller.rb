@@ -16,11 +16,11 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      flash.notice = "Post created!!!"
-      #flash[:notice] = "Post successfully created"
+      flash.notice = 'Post created!!!'
+      # flash[:notice] = "Post successfully created"
       redirect_to posts_url
     else
-      #flash[:alert] = "Something went wrong"
+      # flash[:alert] = "Something went wrong"
       render 'new'
     end
   end
