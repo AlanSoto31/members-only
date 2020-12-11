@@ -1,10 +1,10 @@
 <h1 class="mt-2 p-4 text-center">Post table</h1>
-<%user_si%>
 <table class="table" >
   <thead class="table-info">
     <tr>
       <th>Title</th>
       <th>Body</th>
+      <%user_si%>
       <th><%=@author%></th>
     </tr>
   </thead>
@@ -13,7 +13,9 @@
       <tr>
         <td><%= posts.title %></td>
         <td><%= posts.body %></td>
-        <td><%= @post_name%></td>
+        <% @author_post_hidden = posts.user.name%>
+        <%user_si%>
+        <td><%= @author_post_visible%></td>
       </tr>
     <% end%>
   </tbody>
