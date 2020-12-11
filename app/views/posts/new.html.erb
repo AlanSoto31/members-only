@@ -1,0 +1,20 @@
+<p id="alert"><%= alert %></p>
+
+<div class= "row">
+  <div class="col-4">
+  </div>
+  <div class="col-4 bg-secondary">
+  <h1 class="text-center">Create a Post</h1>
+    <div class= "d-flex justify-content-center">
+      <%= form_for @post, url: {action: "create"} do |f| %>
+        <span>Title:</span><br/>
+        <%= f.text_field :title, placeholder: "Title" %><br/>
+        <span>Body:</span><br/>
+        <%= f.text_field :body, placeholder: "Body" %><br />
+        <%= f.submit "Create", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-4">
+  </div>
+</div>
